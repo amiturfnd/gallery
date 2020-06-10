@@ -7,6 +7,9 @@ Vue.use(VueRouter)
 
   const routes = [
   {
+    path: '/', redirect: '/photos'
+  },
+  {
     path: '/photos',
     name: 'PhotoListing',
     component: PhotoListing,
@@ -23,12 +26,12 @@ Vue.use(VueRouter)
     name: 'PhotoLiked',
     component: () => import(/* webpackChunkName: "PhotoLiked" */ '../views/PhotoLiked.vue')
   }
-]
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-})
+});
 
 export default router
